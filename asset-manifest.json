@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/emoji_react/static/css/main.5b8bf040.css",
-    "main.js": "/emoji_react/static/js/main.100ca00a.js",
-    "index.html": "/emoji_react/index.html",
-    "main.5b8bf040.css.map": "/emoji_react/static/css/main.5b8bf040.css.map",
-    "main.100ca00a.js.map": "/emoji_react/static/js/main.100ca00a.js.map"
+    "main.css": "/SaintCode-Emoji_react/static/css/main.5b8bf040.css",
+    "main.js": "/SaintCode-Emoji_react/static/js/main.100ca00a.js",
+    "index.html": "/SaintCode-Emoji_react/index.html",
+    "main.5b8bf040.css.map": "/SaintCode-Emoji_react/static/css/main.5b8bf040.css.map",
+    "main.100ca00a.js.map": "/SaintCode-Emoji_react/static/js/main.100ca00a.js.map"
   },
   "entrypoints": [
     "static/css/main.5b8bf040.css",
