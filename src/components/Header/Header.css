@@ -1,0 +1,28 @@
+.header {
+    background: linear-gradient(92.33deg, #087990 0.12%, #055160 100%);
+    border: 1px solid #CED4DA;;
+    height: 295px;
+    position: relative;
+    padding-top: 68px;
+    padding-bottom: 100px;
+    text-align: center;;
+}
+.header__title {
+    margin: 0 auto;
+    margin-bottom: 4px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 87px;
+    color: #CFF4FC;
+}
+.header__subtitle {
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 36px;
+    color: #CFF4FC;
+}

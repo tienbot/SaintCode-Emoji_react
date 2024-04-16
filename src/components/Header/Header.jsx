@@ -1,11 +1,16 @@
-import React from 'react'
-import s from './Header.module.sass';
+import React from 'react';
+import './Header.css'
 
-export const Header = () => {
-  return (
-    <header>
-        <h1>Emoji Finder</h1>
-        <p>Find emoji by keywords</p>
-    </header>
-  )
+function Header() {
+
+    return (
+        <header className="header">
+            <a href="##" className="header__link">
+                <h1 className="header__title">Emoji Finder</h1>
+                <span className="header__subtitle">Find emoji by keywords</span>
+            </a>
+        </header>
+);
 }
+
+export default Header;
