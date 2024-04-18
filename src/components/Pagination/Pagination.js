@@ -1,7 +1,7 @@
 import React from 'react';
 import './Pagination.css';
 
-const Pagination = ({ EmojiPerPage, totalEmoji, paginate, currentPage, handlePerPageChange }) => {
+export const Pagination = ({ EmojiPerPage, totalEmoji, paginate, currentPage, handlePerPageChange }) => {
     const pageNumbers = [];
     const totalPages = Math.ceil(totalEmoji / EmojiPerPage);
 
@@ -60,5 +60,3 @@ const Pagination = ({ EmojiPerPage, totalEmoji, paginate, currentPage, handlePer
         </div>
     );
 };
-
-export default Pagination;

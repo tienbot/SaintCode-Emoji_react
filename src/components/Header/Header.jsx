@@ -1,8 +1,7 @@
 import React from 'react';
 import './Header.css'
 
-function Header() {
-
+export function Header() {
     return (
         <header className="header">
             <a href="##" className="header__link">
@@ -10,7 +9,5 @@ function Header() {
                 <span className="header__subtitle">Find emoji by keywords</span>
             </a>
         </header>
-);
+    );
 }
-
-export default Header;

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import s from './Main.module.css';
 import { data } from "../../data/emoji.js";
-import {Card} from "../Card/Card";
-import {Pagination} from '../Pagination/Pagination.js';
-import {Input} from '../Input/Input';
+import {Card} from "../Card/Card.jsx";
+import {Input} from '../Input/Input.jsx';
 
 export function Main() {
     const [searchItem, setSearchItem] = useState(''); // Состояние инпута (что написано в инпуте при загрузке стр.)
@@ -28,16 +27,6 @@ export function Main() {
     // Получение текущей страницы эмодзи
     const currentEmoji = filteredData.slice(firstEmojiIndex, lastEmojiIndex);
 
-    // Функция пагинации
-    const paginate = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
-
-    // Обработчик изменения количества эмодзи на странице
-    const handlePerPageChange = (perPage) => {
-        setEmojiPerPage(perPage);
-    };
-
     return (
         <>
             <Input
@@ -52,13 +41,6 @@ export function Main() {
                             (<Card key={index} symbol={el.symbol} title={el.title} keywords={el.keywords}/>))
                         }
                     </div>
-                    <Pagination
-                        EmojiPerPage={emojiPerPage} 
-                        totalEmoji={data.length} 
-                        paginate={paginate}
-                        currentPage={currentPage}
-                        handlePerPageChange={handlePerPageChange}
-                    />
                 </div>
             </main>
         </>

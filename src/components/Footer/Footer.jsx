@@ -1,15 +1,12 @@
-import React from 'react';
-import './Footer.css'
+import s from './Footer.module.css'
 
-function Footer(props) {
+export function Footer() {
     return (
-        <footer className="footer">
+        <footer className={s.footer}>
             <div className="container">
-                <div className="footer__underline"></div>
-                <p className="footer__text">2022 © Made with love by me</p>
+                <div className={s.footer__underline}></div>
+                <p className={s.footer__text}>2022 © Made with love by me</p>
             </div>
         </footer>
     );
 }
-
-export default Footer;
