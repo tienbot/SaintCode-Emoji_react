@@ -1,4 +1,4 @@
-.pagination-wrapper{
+.paginationWrapper{
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     flex-wrap: wrap;
 }
 
-.page-item{
+.pageItem{
     list-style: none;
     background-color: #fff;
     width: max-content;
@@ -30,7 +30,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-.emoji-per-page-select{
+.emojiPerPageSelect{
     width: 120px;
     height: 38px;
     border: #DEE2E6 1px solid;
@@ -40,14 +40,14 @@
     padding-right: 10px;
 }
 
-.pagination-controls{
+.paginationControls{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
 }
 
-.pagination-controls-descr{
+.paginationControlsDescr{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }

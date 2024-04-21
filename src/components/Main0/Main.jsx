@@ -6,15 +6,15 @@ import {Input} from '../Input/Input.jsx';
 
 export function Main() {
     const [searchItem, setSearchItem] = useState(''); // Состояние инпута (что написано в инпуте при загрузке стр.)
-    const [currentPage, setCurrentPage] = useState(1); // Стартовая страница
+    const [currentPage, setCurrentPage] = useState(''); // Стартовая страница
     const [emojiPerPage, setEmojiPerPage] = useState(12); // Количество эмодзи на странице
     const [filteredData, setFilteredData] = useState([]); // Отфильтрованные данные
 
     // Фильтрация данных при изменении строки поиска
     useEffect(() => {
         const filteredData = data.filter(value =>
-            value.title.toLowerCase().includes(searchItem.toLowerCase()) ||
-            value.keywords.toLowerCase().includes(searchItem.toLowerCase())
+            value.title.toLowerCase().includes(searchItem.toLowerCase().trim()) ||
+            value.keywords.toLowerCase().includes(searchItem.toLowerCase().trim())
         );
         setFilteredData(filteredData);
         setCurrentPage(1); // При изменении фильтрованных данных сбрасываем текущую страницу на первую
@@ -32,7 +32,6 @@ export function Main() {
             <Input
                 value={searchItem}
                 onChange={(event) => setSearchItem(event.target.value)}
-
             />
             <main className={s.main}>
                 <div className="container">

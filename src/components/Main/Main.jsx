@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import s from './Main.module.css';
 import { data } from "../../data/emoji.js";
 import {Card} from "../Card/Card";
-import {Pagination} from '../Pagination/Pagination.js';
+import {Pagination} from '../Pagination/Pagination';
 import {Input} from '../Input/Input';
 
 export function Main() {
@@ -43,18 +43,17 @@ export function Main() {
             <Input
                 value={searchItem}
                 onChange={(event) => setSearchItem(event.target.value)}
-
             />
             <main className={s.main}>
                 <div className="container">
                     <div className={s.grid}>
                         {currentEmoji.map((el, index) =>
-                            (<Card key={index} symbol={el.symbol} title={el.title} keywords={el.keywords}/>))
+                            (<Card key={index} symbol={el.symbol} title={el.title} keywords={[...new Set(el.keywords.split(" "))].join(" ")}/>))
                         }
                     </div>
                     <Pagination
                         EmojiPerPage={emojiPerPage} 
-                        totalEmoji={data.length} 
+                        totalEmoji={filteredData.length} 
                         paginate={paginate}
                         currentPage={currentPage}
                         handlePerPageChange={handlePerPageChange}

@@ -1,8 +1,7 @@
 import React from 'react';
-import './Pagination.css';
+import s from './Pagination.module.css';
 
 export const Pagination = ({ EmojiPerPage, totalEmoji, paginate, currentPage, handlePerPageChange }) => {
-    const pageNumbers = [];
     const totalPages = Math.ceil(totalEmoji / EmojiPerPage);
 
     // Определяем, какие кнопки-страницы будут ображаться
@@ -22,34 +21,35 @@ export const Pagination = ({ EmojiPerPage, totalEmoji, paginate, currentPage, ha
     }
 
     // Формируем массив страниц для отображения
+    const pageNumbers = [];
     for (let i = startPage; i <= endPage; i++) {
         pageNumbers.push(i);
     }
 
-    //предотвращаем перезагрузку страницы при переходе по ссылке
+    //переход между страницами
     const handleClick = (event, number) => {
-        event.preventDefault(); // Предотвращаем перезагрузку страницы
+        // event.preventDefault(); // Предотвращаем перезагрузку страницы
         paginate(number); // Вызываем функцию пагинации
     };
 
     return (
-        <div className="pagination-wrapper">
-            <ul className="pagination">
-                <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                    <a href="#!" className="page-link" onClick={(event) => handleClick(event, 1)}>First</a>
+        <div className={s.paginationWrapper}>
+            <ul className={s.pagination}>
+                <li className={`${s.pageItem} ${currentPage === 1 ? s.disabled : ''}`}>
+                    <a href="##" onClick={(event) => handleClick(event, 1)}>First</a>
                 </li>
                 {pageNumbers.map((number) => (
-                    <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
-                        <a href="#!" className="page-link" onClick={(event) => handleClick(event, number)}>{number}</a>
+                    <li key={number} className={`${s.pageItem} ${currentPage === number ? s.active : ''}`}>
+                        <a href="##" onClick={(event) => handleClick(event, number)}>{number}</a>
                     </li>
                 ))}
-                <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                    <a href="#!" className="page-link" onClick={(event) => handleClick(event, totalPages)}>Last</a>
+                <li className={`${s.pageItem} ${currentPage === totalPages ? s.disabled : ''}`}>
+                    <a href="##" onClick={(event) => handleClick(event, totalPages)}>Last</a>
                 </li>
             </ul>
-            <div className="pagination-controls">
-                <p className="pagination-controls-descr">Per page</p>
-                <select className="emoji-per-page-select" onChange={(event) => handlePerPageChange(event.target.value)} defaultValue={EmojiPerPage}>
+            <div className={s.paginationControls}>
+                <p className={s.paginationControlsDescr}>Per page</p>
+                <select className={s.emojiPerPageSelect} onChange={(event) => handlePerPageChange(event.target.value)}>
                     <option value="12">12</option>
                     <option value="24">24</option>
                     <option value="36">36</option>

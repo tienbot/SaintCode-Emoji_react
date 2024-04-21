@@ -1,4 +1,5 @@
 import s from './Footer.module.css'
+import clsx from 'clsx';
 
 export function Footer() {
     return (
